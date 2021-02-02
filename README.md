@@ -55,3 +55,26 @@ namespace HW4_3
     }
 }
 
+namespace HW4_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите набор чисел через пробел:\t");
+            string setOfNumbersThanSpace = Console.ReadLine();
+            string[] setOfNumbers = setOfNumbersThanSpace.Split(' ');  //Из строки удалим пробел
+            int[] arrayNumbers = Convert.ToInt32(setOfNumbers());//выдает ошибку: "не удается неявно преобразовать тип "int" в "int[]".
+
+            for (int i = 0; i < arrayNumbers.Length; i++) //цикл ввожу для проверки удаления пробела
+            {
+                Console.Write(arrayNumbers[i]);
+            }
+            
+            int sum = arrayNumbers.Sum(); //в виду ошибки в предыдущей строке не удается проверить код в этой строке
+            Console.Write("Сумма всех чисел в строке равна: " + sum);
+            Console.ReadLine();
+
+        }
+    }
+}
